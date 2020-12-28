@@ -19,6 +19,10 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 				<set-payload value="Currency is Australian Dollar" doc:name="Set Payload" doc:id="7978ee4c-a890-4aa4-9a13-28a7bca39181" />
 				<logger level="INFO" doc:name="Currency is Australian Dollar Logged!" doc:id="44d22835-ffcc-4660-8251-72ac7cc43205" message="#[payload]" />
       		</when>
+			<when expression="#[vars.country == 'US']">
+				<set-payload value="Currency is US Dollar" doc:name="Set Payload" doc:id="5922f5d2-dab6-4fa1-a448-1d598be8f264" />
+				<logger level="INFO" doc:name="Currency is US Dollar Logged!" doc:id="41d91696-a15d-4109-a965-fd85af21a2a9" message="#[payload]" />
+			</when>
 			<otherwise>
 				<set-payload value="Currency is Rupee" doc:name="Set Payload" doc:id="a4ed1f59-dd19-47cc-b605-9c51a81019cc" />
 				<logger level="INFO" doc:name="Currency is Rupee Logged!" doc:id="d5e9aae3-c20e-4cc0-859f-c9bb70a8cbb0" message="#[payload]" />
